@@ -1,9 +1,9 @@
 # JS-CALCULATOR
 
 ## Contents:
-1. [Live Showcase]()
-2. [About]()
-3. [Note]()
+1. [Live Showcase](#live-showcase)
+2. [About](#about)
+3. [Note](#note)
 
 ## Live Showcase:
 A live showcase can be found by 👉 [clicking here]() 👈.
