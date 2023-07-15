@@ -16,9 +16,10 @@ main {
 }
 
 main {
-    padding-inline: 10px;
-    padding-block: 20px;
+    padding-inline: 20px;
+    padding-block: 30px;
     border: 1px solid black;
+    border-radius: 1rem;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -30,10 +31,6 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
-    padding: 5px;
-
-    border: 1px solid black;
 }
 
 header h1 {
@@ -51,9 +48,9 @@ header img {
 
 #screen {
     inline-size: 400px;
-    block-size: 200px;
+    block-size: 150px;
     margin: 10px;
-    background-color: gray;
+    border: 1px solid black;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -69,4 +66,5 @@ header img {
 input[type="button"] {
     inline-size: 100px;
     block-size: 50px;
+    font-size: large;
 }
