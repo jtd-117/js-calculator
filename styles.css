@@ -1,8 +1,18 @@
 /* Fonts */
 
 @font-face {
-    font-family: "calculator";
+    font-family: "Calculator";
     src: url("fonts/calculator.ttf");
+}
+
+@font-face {
+    font-family: "Oswald-Regular";
+    src: url("fonts/Oswald/static/Oswald-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Oswald-SemiBold";
+    src: url("fonts/Oswald/static/Oswald-SemiBold.ttf");
 }
 
 /* -------------------------------------------------------------------------- */
@@ -44,6 +54,8 @@ header {
 
 header h1 {
     margin: 10px;
+
+    font-family: "Oswald-SemiBold", sans-serif;
 }
 
 header img {
@@ -60,7 +72,7 @@ header img {
     block-size: 150px;
     margin: 10px;
 
-    font-family: "calculator";
+    font-family: "Calculator", sans-serif;
     border: 1px solid black;
 }
 
@@ -77,5 +89,7 @@ header img {
 input[type="button"] {
     inline-size: 100px;
     block-size: 50px;
+
+    font-family: "Oswald-Regular", sans-serif;
     font-size: large;
 }
