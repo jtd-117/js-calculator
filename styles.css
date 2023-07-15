@@ -16,7 +16,8 @@ main {
 }
 
 main {
-    padding: 20px;
+    padding-inline: 10px;
+    padding-block: 20px;
     border: 1px solid black;
 }
 
@@ -30,11 +31,18 @@ header {
     align-items: center;
     justify-content: center;
 
+    padding: 5px;
+
     border: 1px solid black;
 }
 
 header h1 {
     margin: 10px;
+}
+
+header img {
+    inline-size: 36px;
+    block-size: 36px;
 }
 
 /* -------------------------------------------------------------------------- */
