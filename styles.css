@@ -70,6 +70,10 @@ footer h3 {
     font-family: "Oswald-SemiBold", sans-serif;
 }
 
+header h1 {
+    color: blue;
+}
+
 header img {
     inline-size: 36px;
     block-size: 36px;
@@ -107,6 +111,32 @@ input[type="button"] {
 
     font-family: "Oswald-Regular", sans-serif;
     font-size: x-large;
+}
+
+input[type="button"]:active {
+    font-size: xx-large;
+    border: 5px solid black;
+}
+
+#all-clear {
+    background-color: orange;
+}
+
+#delete {
+    background-color: plum;
+}
+
+#factorial, 
+#modulo, 
+#divide, 
+#multiply, 
+#minus, 
+#add {
+    background-color: lightgray;
+}
+
+#equals {
+    background-color: dodgerblue;
 }
 
 /* -------------------------------------------------------------------------- */
