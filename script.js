@@ -86,3 +86,16 @@ function operate(value1, value2, operator) {
 }
 /* -------------------------------------------------------------------------- */
 
+/* CONNECTING THE FRONT & BACK ENDS TOGETHER */
+
+// STEP 1: Query Selectors
+const powerBtn = document.getElementById("power");
+const deleteBtn = document.getElementById("delete");
+const allClearBtn = document.getElementById("all-clear");
+const equalsBtn = document.getElementById("equals");
+const addBtn = document.getElementById("add");
+const subtractBtn = document.getElementById("subtract");
+const multiplyBtn = document.getElementById("multiply");
+const divideBtn = document.getElementById("divide");
+const moduloBtn = document.getElementById("modulo");
+const decimalBtn = document.getElementById("decimal");
