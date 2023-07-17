@@ -46,12 +46,23 @@ function multiply(number1, number2) {
 /* -------------------------------------------------------------------------- */
 /**
  * @description         (AUXILIARY) DIVIDES two numbers.
- * @param   {number}    number1 The numerator
- * @param   {number}    number2 The denominator
+ * @param   {number}    number1 The dividend
+ * @param   {number}    number2 The divisor
  * @returns {string}    The result of the division of the arguments.
  */
 function divide(number1, number2) {
     return (number1 / number2).toString();
+}
+/* -------------------------------------------------------------------------- */
+/**
+ * @description         (AUXILIARY) Calculates the REMAINDER after dividing 
+ *                      two numbers.
+ * @param   {number}    number1 The dividend
+ * @param   {number}    number2 The divisor
+ * @returns {string}    The result of the modulo of the arguments.
+ */
+function modulo(number1, number2) {
+    return (number1 % number2).toString();
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -75,6 +86,3 @@ function operate(value1, value2, operator) {
 }
 /* -------------------------------------------------------------------------- */
 
-let lhsValue = "";
-let rhsValue = "";
-let operator = "";
