@@ -12,6 +12,7 @@ const operators = Object.freeze({
     subtract:   1,
     multiply:   2,
     divide:     3,
+    modulo:     4,
 });
 /* -------------------------------------------------------------------------- */
 /**
@@ -79,10 +80,17 @@ function operate(value1, value2, operator) {
     const number2 = Number(value2);
 
     // STEP 2: Decide perform an operation according to `operator`
-    if (operator === operators.add) return add(number1, number2);
-    else if (operator === operators.subtract) subtract(number1, number2);
-    else if (operator === operators.multiply) multiply(number1, number2);
-    else divide(number1, number2);
+    if (operator === operators.add) {
+        return add(number1, number2);
+    } else if (operator === operators.subtract) {
+        return subtract(number1, number2);
+    } else if (operator === operators.multiply) {
+        return multiply(number1, number2);
+    } else if (operator === operators.divide) {
+        return divide(number1, number2);
+    } else {
+        return modulo(number1, number2);
+    }
 }
 /* -------------------------------------------------------------------------- */
 
