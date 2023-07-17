@@ -56,13 +56,23 @@ function divide(number1, number2) {
 /* -------------------------------------------------------------------------- */
 /**
  * @description         Decides which auxiliary operator function to call.
- * @param   {number}    value1      The first numeric string
- * @param   {number}    value2      The second numeric string
+ * @param   {number}    value1      The first operand as a numeric string
+ * @param   {number}    value2      The second operand as a numeric string
  * @param   {object}    operator    A value from the `operators` enum
  * @returns {string}    The result of the desired operation as a `string`.
  */
-function operate(value1, value2, operator);
+function operate(value1, value2, operator) {
 
+    // STEP 1: Convert the `value` arguments into numbers
+    const number1 = Number(value1);
+    const number2 = Number(value2);
+
+    // STEP 2: Decide perform an operation according to `operator`
+    if (operator ===operators.add) return add(number1, number2);
+    else if (operator ===operators.subtract) subtract(number1, number2);
+    else if (operator ===operators.multiply) multiply(number1, number2);
+    else divide(number1, number2);
+}
 /* -------------------------------------------------------------------------- */
 
 let lhsValue = "";
