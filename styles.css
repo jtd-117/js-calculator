@@ -99,6 +99,7 @@ header img {
 
 #expression, 
 #result {
+    font-weight: bold;
     margin-inline: 20px;
 }
 
@@ -135,7 +136,9 @@ input[type="button"] {
 }
 
 input[type="button"]:active {
+    font-weight: bold;
     font-size: xx-large;
+    
     border: 5px solid black;
 }
 
