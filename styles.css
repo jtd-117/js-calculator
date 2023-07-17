@@ -143,11 +143,11 @@ input[type="button"]:active {
 }
 
 #power {
-    background-color: red;
+    background-color: orange;
 }
 
 #all-clear {
-    background-color: orange;
+    background-color: cyan;
 }
 
 #delete {
