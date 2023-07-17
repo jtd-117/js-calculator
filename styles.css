@@ -154,7 +154,7 @@ input[type="button"]:active {
 #modulo, 
 #divide, 
 #multiply, 
-#minus, 
+#subtract, 
 #add {
     background-color: lightgray;
 }
