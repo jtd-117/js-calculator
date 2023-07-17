@@ -68,9 +68,9 @@ function operate(value1, value2, operator) {
     const number2 = Number(value2);
 
     // STEP 2: Decide perform an operation according to `operator`
-    if (operator ===operators.add) return add(number1, number2);
-    else if (operator ===operators.subtract) subtract(number1, number2);
-    else if (operator ===operators.multiply) multiply(number1, number2);
+    if (operator === operators.add) return add(number1, number2);
+    else if (operator === operators.subtract) subtract(number1, number2);
+    else if (operator === operators.multiply) multiply(number1, number2);
     else divide(number1, number2);
 }
 /* -------------------------------------------------------------------------- */
