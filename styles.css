@@ -48,7 +48,8 @@ main {
 
 /* Title & Logo */
 
-header {
+header,
+footer {
     padding-inline: 5px;
     margin-block-end: 10px;
 
@@ -62,7 +63,8 @@ header {
     background-color: white;
 }
 
-header h1 {
+header h1,
+footer h3 {
     margin: 0;
 
     font-family: "Oswald-SemiBold", sans-serif;
@@ -94,15 +96,32 @@ header img {
 #menu {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 
     background-color: white;
 }
 
 input[type="button"] {
     inline-size: 100px;
-    block-size: 50px;
+    block-size: 70px;
 
     font-family: "Oswald-Regular", sans-serif;
-    font-size: large;
+    font-size: x-large;
+}
+
+/* -------------------------------------------------------------------------- */
+
+footer {
+    padding-inline: 10px;
+    margin-block-start: 10px;
+}
+
+footer a {
+    color: gray;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: gray;
+    text-decoration: underline;
 }
