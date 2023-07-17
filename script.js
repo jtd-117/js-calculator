@@ -15,83 +15,53 @@ const operators = Object.freeze({
 });
 /* -------------------------------------------------------------------------- */
 /**
- * @description     
- * @param {number}  value1 The first numeric string
- * @param {number}  value2 The second numeric string
+ * @description         (AUXILIARY) ADDS two numbers.
+ * @param   {number}    number1 The first addend
+ * @param   {number}    number2 The second addend
+ * @returns {string}    The result of the adding of the arguments.
  */
-function add(value1, value2) {
-    
-    // STEP 1: Convert arguments into values
-    let number1 = Number(value1);
-    let number2 = Number(value2);
-
-    // STEP 2: Add the numbers
-    let result = number1 + number2;
-
-    // STEP 3: Return the result as a string
-    return result.toString();
+function add(number1, number2) {
+    return (number1 + number2).toString();
 }
 /* -------------------------------------------------------------------------- */
 /**
- * @description     
- * @param {number}  value1 The first numeric string
- * @param {number}  value2 The second numeric string
+ * @description         (AUXILIARY) SUBTRACTS two numbers.
+ * @param   {number}    number1 The minuend
+ * @param   {number}    number2 The subtrahend
+ * @returns {string}    The result of the subtracting of the arguments.
  */
-function subtract(value1, value2) {
-
-    // STEP 1: Convert arguments into values
-    let number1 = Number(value1);
-    let number2 = Number(value2);
-
-    // STEP 2: Subtract the numbers
-    let result = number1 - number2;
-
-    // STEP 3: Return the result as a string
-    return result.toString();
+function subtract(number1, number2) {
+    return (number1 - number2).toString();
 }
 /* -------------------------------------------------------------------------- */
 /**
- * @description     
- * @param {number}  value1 The first numeric string
- * @param {number}  value2 The second numeric string
+ * @description         (AUXILIARY) MULTIPLIES two numbers.
+ * @param   {number}    number1 The multiplicand
+ * @param   {number}    number2 The multiplicator
+ * @returns {string}    The result of the multiplication of the arguments.
  */
-function multiply(value1, value2) {
-
-    // STEP 1: Convert arguments into values
-    let number1 = Number(value1);
-    let number2 = Number(value2);
-
-    // STEP 2: Multiply the numbers
-    let result = number1 * number2;
-
-    // STEP 3: Return the result as a string
-    return result.toString();
+function multiply(number1, number2) {
+    return (number1 * number2).toString();
 }
 /* -------------------------------------------------------------------------- */
 /**
- * @description     
- * @param {number}  value1 The first numeric string
- * @param {number}  value2 The second numeric string
+ * @description         (AUXILIARY) DIVIDES two numbers.
+ * @param   {number}    number1 The numerator
+ * @param   {number}    number2 The denominator
+ * @returns {string}    The result of the division of the arguments.
  */
-function divide(value1, value2) {
-
-    // STEP 1: Convert arguments into values
-    let number1 = Number(value1);
-    let number2 = Number(value2);
-
-    // STEP 2: Divide the numbers
-    let result = number1 / number2;
-
-    // STEP 3: Return the result as a string
-    return result.toString();
+function divide(number1, number2) {
+    return (number1 / number2).toString();
 }
 /* -------------------------------------------------------------------------- */
 /**
- * @description     
- * @param {number}  value1 The first numeric string
- * @param {number}  value2 The second numeric string
+ * @description         Decides which auxiliary operator function to call.
+ * @param   {number}    value1      The first numeric string
+ * @param   {number}    value2      The second numeric string
+ * @param   {object}    operator    A value from the `operators` enum
+ * @returns {string}    The result of the desired operation as a `string`.
  */
-function operate(value1, value2);
+function operate(value1, value2, operator);
 
 /* -------------------------------------------------------------------------- */
 
