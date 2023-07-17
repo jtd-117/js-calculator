@@ -89,8 +89,25 @@ header img {
     block-size: 150px;
     margin: 10px;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     font-family: "Calculator", sans-serif;
     background-color: white;
+}
+
+#expression, 
+#result {
+    margin-inline: 20px;
+}
+
+#expression {
+    font-size: 40px;
+}
+
+#result {
+    font-size: 60px;
 }
 
 /* -------------------------------------------------------------------------- */
