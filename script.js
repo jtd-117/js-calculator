@@ -150,6 +150,17 @@ function composeNumber(e) {
     }
 }
 /* -------------------------------------------------------------------------- */
+/**
+ * @description Resets variables to their default state.
+ */
+function resetVariables() {
+    number1 = "";
+    number2 = "";
+    operator = null;
+    expressionTag.textContent = "";
+    resultTag.textContent = "";
+}
+/* -------------------------------------------------------------------------- */
 
 /* CONNECTING THE FRONT & BACK ENDS TOGETHER */
 
@@ -183,3 +194,4 @@ numberBtns.forEach((numberBtn) => numberBtn.addEventListener("click", composeNum
 decimalBtn.addEventListener("click", composeNumber);
 
 // STEP 4: Event listeners for 'delete', 'all-clear' & 'power' buttons
+allClearBtn.addEventListener("click", resetVariables);
