@@ -8,11 +8,11 @@
  * @description An enumeration of operations supported by the calculator.
  */
 const operators = Object.freeze({
-    Add:        0,
-    Subtract:   1,
-    Multiply:   2,
-    Divide:     3,
-    Modulo:     4,
+    Add:        "+",
+    Subtract:   "-",
+    Multiply:   "x",
+    Divide:     "÷",
+    Modulo:     "%",
 });
 /* -------------------------------------------------------------------------- */
 /**
@@ -79,7 +79,10 @@ function operate() {
     number1 = Number(number1);
     number2 = Number(number2);
 
-    // STEP 3: Decide perform an operation according to `operator`
+    // STEP 3: Adjust text content in 'expression' tag
+    expressionTag.textContent = `${number1} ${operator} ${number2} =`;
+
+    // STEP 4: Decide perform an operation according to `operator`
     if (operator === operators.Add) {
         number1 = add(number1, number2);
     } else if (operator === operators.Subtract) {
@@ -91,7 +94,10 @@ function operate() {
     } else {
         number1 = modulo(number1, number2);
     }
-    // STEP 4: Clear variables except 'number1'
+    // STEP 5: Adjust text content in 'result' tag
+    resultTag.textContent = number1;
+
+    // STEP 6: Clear variables except 'number1'
     number2 = "";
     operator = null;
 }
@@ -134,6 +140,7 @@ function composeNumber(e) {
     // CASE A: Composing the FIRST number
     if (operator === null) {
         number1 = number1.concat(e.target.value);
+
     
     // CASE B: Composing the SECOND number
     } else {
@@ -161,8 +168,8 @@ const divideBtn = document.getElementById("divide");
 const moduloBtn = document.getElementById("modulo");
 const decimalBtn = document.getElementById("decimal");
 const numberBtns = document.querySelectorAll(`input[class="number"]`);
-const expressionTag = document.querySelector("expression");
-const resultTag = document.querySelector("result");
+const expressionTag = document.getElementById("expression");
+const resultTag = document.getElementById("result");
 
 // STEP 3: Event listeners for basic operations & equals buttons
 const operationBtns = [addBtn, subtractBtn, multiplyBtn, divideBtn, moduloBtn];
@@ -172,3 +179,5 @@ equalsBtn.addEventListener("click", operate);
 // STEP 3: Event listeners for number & decimal buttons
 numberBtns.forEach((numberBtn) => numberBtn.addEventListener("click", composeNumber));
 decimalBtn.addEventListener("click", composeNumber);
+
+// STEP 4: Event listeners for 'delete', 'all-clear' & 'power' buttons
