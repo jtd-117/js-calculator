@@ -161,6 +161,23 @@ function resetVariables() {
     resultTag.textContent = "";
 }
 /* -------------------------------------------------------------------------- */
+/**
+ * @description Deletes a character from the 'result' tag.
+ */
+function deleteCharacter() {
+
+    // CASE A: Deleting from the FIRST number
+    if (operator === null) {
+        number1 = number1.slice(0, -1);
+        resultTag.textContent = number1;
+    
+    // CASE B: Deleting from the SECOND number
+    } else {
+        number2 = number2.slice(0, -1);
+        resultTag.textContent = number2;
+    }
+}
+/* -------------------------------------------------------------------------- */
 
 /* CONNECTING THE FRONT & BACK ENDS TOGETHER */
 
@@ -195,3 +212,4 @@ decimalBtn.addEventListener("click", composeNumber);
 
 // STEP 4: Event listeners for 'delete', 'all-clear' & 'power' buttons
 allClearBtn.addEventListener("click", resetVariables);
+deleteBtn.addEventListener("click", deleteCharacter);
