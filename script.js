@@ -75,11 +75,7 @@ function modulo(number1, number2) {
  */
 function operate(value1, value2, operator) {
 
-    // STEP 1: Convert the `value` arguments into numbers
-    const number1 = Number(value1);
-    const number2 = Number(value2);
-
-    // STEP 2: Decide perform an operation according to `operator`
+    // STEP 1: Decide perform an operation according to `operator`
     if (operator === operators.Add) {
         return add(number1, number2);
     } else if (operator === operators.Subtract) {
@@ -120,7 +116,6 @@ function assignOperator(e) {
     } else {
         operator = operators.Modulo;
     }
-    console.log(e.target.id);
 }
 /* -------------------------------------------------------------------------- */
 
