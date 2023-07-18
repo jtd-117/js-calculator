@@ -8,11 +8,11 @@
  * @description An enumeration of operations supported by the calculator.
  */
 const operators = Object.freeze({
-    add:        0,
-    subtract:   1,
-    multiply:   2,
-    divide:     3,
-    modulo:     4,
+    Add:        0,
+    Subtract:   1,
+    Multiply:   2,
+    Divide:     3,
+    Modulo:     4,
 });
 /* -------------------------------------------------------------------------- */
 /**
@@ -80,23 +80,56 @@ function operate(value1, value2, operator) {
     const number2 = Number(value2);
 
     // STEP 2: Decide perform an operation according to `operator`
-    if (operator === operators.add) {
+    if (operator === operators.Add) {
         return add(number1, number2);
-    } else if (operator === operators.subtract) {
+    } else if (operator === operators.Subtract) {
         return subtract(number1, number2);
-    } else if (operator === operators.multiply) {
+    } else if (operator === operators.Multiply) {
         return multiply(number1, number2);
-    } else if (operator === operators.divide) {
+    } else if (operator === operators.Divide) {
         return divide(number1, number2);
     } else {
         return modulo(number1, number2);
     }
 }
 /* -------------------------------------------------------------------------- */
+/**
+ * @description     Assigns an ENUM vale from `operators` to `operator` 
+ *                  variable.
+ * @param {Event}   e The event caused by a "click" event
+ */
+function assignOperator(e) {
+
+    // CASE 1A: 'Add' button was pressed
+    if (e.target.id === "add") {
+        operator = operators.Add;
+
+    // CASE 1B: 'Subtract' button was pressed
+    } else if (e.target.id === "subtract") {
+        operator = operators.Subtract;
+
+    // CASE 1C: 'Multiply' button was pressed
+    } else if (e.target.id === "multiply") {
+        operator = operators.Multiply;
+    
+    // CASE 1D: 'Divide' button was pressed
+    } else if (e.target.id === "divide") {
+        operator = operators.Divide;
+    
+    // CASE 1E: 'Modulo' button was pressed
+    } else {
+        operator = operators.Modulo;
+    }
+    console.log(e.target.id);
+}
+/* -------------------------------------------------------------------------- */
 
 /* CONNECTING THE FRONT & BACK ENDS TOGETHER */
 
-// STEP 1: Query Selectors
+// STEP 1: Initialise variables
+let operator = null;
+
+// STEP 2: Query Selectors
 const powerBtn = document.getElementById("power");
 const deleteBtn = document.getElementById("delete");
 const allClearBtn = document.getElementById("all-clear");
@@ -107,3 +140,11 @@ const multiplyBtn = document.getElementById("multiply");
 const divideBtn = document.getElementById("divide");
 const moduloBtn = document.getElementById("modulo");
 const decimalBtn = document.getElementById("decimal");
+const numberBtns = document.querySelectorAll(`input[class="number"]`);
+
+// STEP 3: Event listners for basic operatations
+addBtn.addEventListener("click", assignOperator);
+subtractBtn.addEventListener("click", assignOperator);
+multiplyBtn.addEventListener("click", assignOperator);
+divideBtn.addEventListener("click", assignOperator);
+moduloBtn.addEventListener("click", assignOperator);
