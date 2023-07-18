@@ -91,9 +91,9 @@ function operate() {
     } else {
         number1 = modulo(number1, number2);
     }
+    // STEP 4: Clear variables except 'number1'
     number2 = "";
     operator = null;
-    console.log(number1);
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -134,12 +134,10 @@ function composeNumber(e) {
     // CASE A: Composing the FIRST number
     if (operator === null) {
         number1 = number1.concat(e.target.value);
-        console.log(number1);
     
     // CASE B: Composing the SECOND number
     } else {
         number2 = number2.concat(e.target.value);
-        console.log(number2);
     }
 }
 /* -------------------------------------------------------------------------- */
@@ -163,6 +161,8 @@ const divideBtn = document.getElementById("divide");
 const moduloBtn = document.getElementById("modulo");
 const decimalBtn = document.getElementById("decimal");
 const numberBtns = document.querySelectorAll(`input[class="number"]`);
+const expressionTag = document.querySelector("expression");
+const resultTag = document.querySelector("result");
 
 // STEP 3: Event listeners for basic operations & equals buttons
 const operationBtns = [addBtn, subtractBtn, multiplyBtn, divideBtn, moduloBtn];
