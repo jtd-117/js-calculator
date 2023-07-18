@@ -68,9 +68,6 @@ function modulo(number1, number2) {
 /* -------------------------------------------------------------------------- */
 /**
  * @description         Decides which auxiliary operator function to call.
- * @param   {number}    value1      The first operand as a numeric string
- * @param   {number}    value2      The second operand as a numeric string
- * @param   {object}    operator    A value from the `operators` enum
  * @returns {string}    The result of the desired operation as a `string`.
  */
 function operate() {
@@ -96,7 +93,7 @@ function operate() {
 /**
  * @description     Assigns an ENUM vale from `operators` to `operator` 
  *                  variable.
- * @param {Event}   e The event caused by a "click" event
+ * @param {Event}   e The event caused by a "click"
  */
 function assignOperator(e) {
 
@@ -119,6 +116,24 @@ function assignOperator(e) {
     // CASE 1E: 'Modulo' button was pressed
     } else {
         operator = operators.Modulo;
+    }
+}
+/* -------------------------------------------------------------------------- */
+/**
+ * @description     Composes a NUMBER after every button input.
+ * @param {Event}   e The event caused by a "click"
+ */
+function composeNumber(e) {
+
+    // CASE A: Composing the FIRST number
+    if (operator === null) {
+        number1 = number1.concat(e.target.value);
+        console.log(number1);
+    
+    // CASE B: Composing the SECOND number
+    } else {
+        number2 = number2.concat(e.target.value);
+        console.log(number2);
     }
 }
 /* -------------------------------------------------------------------------- */
@@ -149,3 +164,10 @@ subtractBtn.addEventListener("click", assignOperator);
 multiplyBtn.addEventListener("click", assignOperator);
 divideBtn.addEventListener("click", assignOperator);
 moduloBtn.addEventListener("click", assignOperator);
+
+// STEP 3: Event listeners for number & decimal buttons
+for (let i = 0; i <= 9; i++) {
+    const numberBtn = document.getElementById(`number-${i}`);
+    numberBtn.addEventListener("click", composeNumber);
+}
+decimalBtn.addEventListener("click", composeNumber);
