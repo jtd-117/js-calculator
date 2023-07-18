@@ -73,19 +73,21 @@ function modulo(number1, number2) {
  * @param   {object}    operator    A value from the `operators` enum
  * @returns {string}    The result of the desired operation as a `string`.
  */
-function operate(value1, value2, operator) {
+function operate() {
 
-    // STEP 1: Decide perform an operation according to `operator`
+    // STEP 1: Ensure arguments do not lead to sytnax error
+
+    // STEP 2: Decide perform an operation according to `operator`
     if (operator === operators.Add) {
-        return add(number1, number2);
+        return add(value1, value2);
     } else if (operator === operators.Subtract) {
-        return subtract(number1, number2);
+        return subtract(value1, value2);
     } else if (operator === operators.Multiply) {
-        return multiply(number1, number2);
+        return multiply(value1, value2);
     } else if (operator === operators.Divide) {
-        return divide(number1, number2);
+        return divide(value1, value2);
     } else {
-        return modulo(number1, number2);
+        return modulo(value1, value2);
     }
 }
 /* -------------------------------------------------------------------------- */
