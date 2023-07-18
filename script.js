@@ -79,15 +79,15 @@ function operate() {
 
     // STEP 2: Decide perform an operation according to `operator`
     if (operator === operators.Add) {
-        return add(value1, value2);
+        return add(number1, number2);
     } else if (operator === operators.Subtract) {
-        return subtract(value1, value2);
+        return subtract(number1, number2);
     } else if (operator === operators.Multiply) {
-        return multiply(value1, value2);
+        return multiply(number1, number2);
     } else if (operator === operators.Divide) {
-        return divide(value1, value2);
+        return divide(number1, number2);
     } else {
-        return modulo(value1, value2);
+        return modulo(number1, number2);
     }
 }
 /* -------------------------------------------------------------------------- */
@@ -124,6 +124,8 @@ function assignOperator(e) {
 /* CONNECTING THE FRONT & BACK ENDS TOGETHER */
 
 // STEP 1: Initialise variables
+let number1 = "";
+let number2 = "";
 let operator = null;
 
 // STEP 2: Query Selectors
