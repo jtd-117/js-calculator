@@ -129,6 +129,7 @@ function assignOperator(e) {
     } else {
         operator = operators.Modulo;
     }
+    expressionTag.textContent = `${number1} ${operator}`;
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -140,11 +141,12 @@ function composeNumber(e) {
     // CASE A: Composing the FIRST number
     if (operator === null) {
         number1 = number1.concat(e.target.value);
-
+        resultTag.textContent = number1;
     
     // CASE B: Composing the SECOND number
     } else {
         number2 = number2.concat(e.target.value);
+        resultTag.textContent = number2;
     }
 }
 /* -------------------------------------------------------------------------- */
