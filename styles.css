@@ -91,7 +91,6 @@ header img {
 
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     justify-content: center;
 
     font-family: "Calculator", sans-serif;
@@ -101,14 +100,11 @@ header img {
 
 #expression, 
 #result {
-    inline-size: inherit;
-
-    box-sizing: border-box;
     padding-inline: 20px;
 
     text-align: end;
     font-weight: bold;
-    overflow-x: scroll;
+    overflow: hidden;
 }
 
 #expression {
