@@ -101,8 +101,14 @@ header img {
 
 #expression, 
 #result {
+    inline-size: inherit;
+
+    box-sizing: border-box;
+    padding-inline: 20px;
+
+    text-align: end;
     font-weight: bold;
-    margin-inline: 20px;
+    overflow-x: scroll;
 }
 
 #expression {
