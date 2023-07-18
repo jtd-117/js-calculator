@@ -78,6 +78,8 @@ function operate() {
     // STEP 1: Ensure arguments do not lead to sytnax error
 
     // STEP 2: Decide perform an operation according to `operator`
+    number1 = Number(number1);
+    number2 = Number(number2);
     if (operator === operators.Add) {
         return add(number1, number2);
     } else if (operator === operators.Subtract) {
