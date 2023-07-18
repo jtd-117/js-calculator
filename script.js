@@ -74,20 +74,26 @@ function operate() {
 
     // STEP 1: Ensure arguments do not lead to sytnax error
 
-    // STEP 2: Decide perform an operation according to `operator`
+
+    // STEP 2: Convert variables to numbers
     number1 = Number(number1);
     number2 = Number(number2);
+
+    // STEP 3: Decide perform an operation according to `operator`
     if (operator === operators.Add) {
-        return add(number1, number2);
+        number1 = add(number1, number2);
     } else if (operator === operators.Subtract) {
-        return subtract(number1, number2);
+        number1 = subtract(number1, number2);
     } else if (operator === operators.Multiply) {
-        return multiply(number1, number2);
+        number1 = multiply(number1, number2);
     } else if (operator === operators.Divide) {
-        return divide(number1, number2);
+        number1 = divide(number1, number2);
     } else {
-        return modulo(number1, number2);
+        number1 = modulo(number1, number2);
     }
+    number2 = "";
+    operator = null;
+    console.log(number1);
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -158,16 +164,11 @@ const moduloBtn = document.getElementById("modulo");
 const decimalBtn = document.getElementById("decimal");
 const numberBtns = document.querySelectorAll(`input[class="number"]`);
 
-// STEP 3: Event listners for basic operatations
-addBtn.addEventListener("click", assignOperator);
-subtractBtn.addEventListener("click", assignOperator);
-multiplyBtn.addEventListener("click", assignOperator);
-divideBtn.addEventListener("click", assignOperator);
-moduloBtn.addEventListener("click", assignOperator);
+// STEP 3: Event listeners for basic operations & equals buttons
+const operationBtns = [addBtn, subtractBtn, multiplyBtn, divideBtn, moduloBtn];
+operationBtns.forEach((op) => op.addEventListener("click", assignOperator));
+equalsBtn.addEventListener("click", operate);
 
 // STEP 3: Event listeners for number & decimal buttons
-for (let i = 0; i <= 9; i++) {
-    const numberBtn = document.getElementById(`number-${i}`);
-    numberBtn.addEventListener("click", composeNumber);
-}
+numberBtns.forEach((numberBtn) => numberBtn.addEventListener("click", composeNumber));
 decimalBtn.addEventListener("click", composeNumber);
