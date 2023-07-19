@@ -179,7 +179,7 @@ function composeNumber(e) {
     // CASE 1B: Composing the SECOND number
     } else {
         number2 = number2.concat(e.target.value);
-        resultTag.textContent = Number(number2);
+        resultTag.textContent = number2;
     }
 }
 /* -------------------------------------------------------------------------- */
