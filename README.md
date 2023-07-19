@@ -12,6 +12,8 @@ A live showcase can be found by 👉 [clicking here](https://jtd-117.github.io/j
 ## About:
 'JS Calculator' provides a basic desk calculator written in JavaScript. The calculator a parady of the company [Texas Instruments](https://www.ti.com/) which is known for make their own scientific calculators.
 
+![](images/demo.gif)
+
 ## Features:
 - Basic operations:
     - Addition
