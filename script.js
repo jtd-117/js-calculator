@@ -235,6 +235,7 @@ function togglePower() {
     
     // CASE 2B: Not activated
     } else {
+        expressionTag.textContent = "";
         resultTag.textContent = "";
     }
 }
@@ -275,3 +276,8 @@ decimalBtn.addEventListener("click", composeNumber);
 allClearBtn.addEventListener("click", resetVariables);
 deleteBtn.addEventListener("click", deleteCharacter);
 powerBtn.addEventListener("click", togglePower);
+
+// STEP 5: Add sound effects for button press
+const buttonSound = new Audio("sounds/button-press.mp3");
+const allBtns = document.querySelectorAll(`input[type="button"]`);
+allBtns.forEach((btn) => btn.addEventListener("click", () => buttonSound.play()));
