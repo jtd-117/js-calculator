@@ -174,7 +174,7 @@ function composeNumber(e) {
     // CASE 1A: Composing the FIRST number
     if (operator === null) {
         number1 = number1.concat(e.target.value);
-        resultTag.textContent = Number(number1);
+        resultTag.textContent = number1;
     
     // CASE 1B: Composing the SECOND number
     } else {
