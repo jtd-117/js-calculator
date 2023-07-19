@@ -73,7 +73,10 @@ function modulo(number1, number2) {
 function operate() {
 
     // STEP 1: Ensure arguments do not lead to sytnax error
-
+    if ((number1 === "") || (number2 === "") || (operator === null)) {
+        resultTag.textContent = "Syntax Error";
+        return;
+    }
 
     // STEP 2: Convert variables to numbers
     number1 = Number(number1);
@@ -85,12 +88,16 @@ function operate() {
     // STEP 4: Decide perform an operation according to `operator`
     if (operator === operators.Add) {
         number1 = add(number1, number2);
+
     } else if (operator === operators.Subtract) {
         number1 = subtract(number1, number2);
+
     } else if (operator === operators.Multiply) {
         number1 = multiply(number1, number2);
+
     } else if (operator === operators.Divide) {
         number1 = divide(number1, number2);
+
     } else {
         number1 = modulo(number1, number2);
     }
@@ -167,7 +174,7 @@ function resetVariables() {
     number2 = "";
     operator = null;
     expressionTag.textContent = "";
-    resultTag.textContent = Number(number1);
+    resultTag.textContent = "0";
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -195,7 +202,7 @@ let number1 = "";
 let number2 = "";
 let operator = null;
 window.onload = () => {
-    resultTag.textContent = Number(number1);
+    resultTag.textContent = "0";
 }
 // STEP 2: Query Selectors
 const powerBtn = document.getElementById("power");
