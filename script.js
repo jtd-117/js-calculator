@@ -231,12 +231,10 @@ function togglePower() {
 
     // CASE 2A: Activated
     if (powerBtn.classList.contains("off") === false) {
-        screenTag.style.backgroundColor = "white";
         resetVariables();
     
     // CASE 2B: Not activated
     } else {
-        screenTag.style.backgroundColor = "black";
         resultTag.textContent = "";
     }
 }
@@ -250,7 +248,6 @@ let number2 = "";
 let operator = null;
 
 // STEP 2: Query Selectors
-const screenTag = document.getElementById("screen");
 const powerBtn = document.getElementById("power");
 const deleteBtn = document.getElementById("delete");
 const allClearBtn = document.getElementById("all-clear");
