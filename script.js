@@ -268,7 +268,6 @@ const resultTag = document.getElementById("result");
 // STEP 3: Event listeners for basic operations & equals buttons
 const operationBtns = [addBtn, subtractBtn, multiplyBtn, divideBtn, moduloBtn];
 operationBtns.forEach((op) => op.addEventListener("click", assignOperator));
-//operationBtns.forEach((op) => op.addEventListener("click", chain));
 equalsBtn.addEventListener("click", operate);
 
 // STEP 3: Event listeners for number & decimal buttons
