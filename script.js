@@ -16,57 +16,6 @@ const operators = Object.freeze({
 });
 /* -------------------------------------------------------------------------- */
 /**
- * @description         (AUXILIARY) ADDS two numbers.
- * @param   {number}    number1 The first addend
- * @param   {number}    number2 The second addend
- * @returns {string}    The result of the adding of the arguments.
- */
-function add(number1, number2) {
-    return (number1 + number2).toString();
-}
-/* -------------------------------------------------------------------------- */
-/**
- * @description         (AUXILIARY) SUBTRACTS two numbers.
- * @param   {number}    number1 The minuend
- * @param   {number}    number2 The subtrahend
- * @returns {string}    The result of the subtracting of the arguments.
- */
-function subtract(number1, number2) {
-    return (number1 - number2).toString();
-}
-/* -------------------------------------------------------------------------- */
-/**
- * @description         (AUXILIARY) MULTIPLIES two numbers.
- * @param   {number}    number1 The multiplicand
- * @param   {number}    number2 The multiplicator
- * @returns {string}    The result of the multiplication of the arguments.
- */
-function multiply(number1, number2) {
-    return (number1 * number2).toString();
-}
-/* -------------------------------------------------------------------------- */
-/**
- * @description         (AUXILIARY) DIVIDES two numbers.
- * @param   {number}    number1 The dividend
- * @param   {number}    number2 The divisor
- * @returns {string}    The result of the division of the arguments.
- */
-function divide(number1, number2) {
-    return (number1 / number2).toString();
-}
-/* -------------------------------------------------------------------------- */
-/**
- * @description         (AUXILIARY) Calculates the REMAINDER after dividing 
- *                      two numbers.
- * @param   {number}    number1 The dividend
- * @param   {number}    number2 The divisor
- * @returns {string}    The result of the modulo of the arguments.
- */
-function modulo(number1, number2) {
-    return (number1 % number2).toString();
-}
-/* -------------------------------------------------------------------------- */
-/**
  * @description         Decides which auxiliary operator function to call.
  * @returns {string}    The result of the desired operation as a `string`.
  */
@@ -90,22 +39,22 @@ function operate() {
 
     // STEP 4: Decide perform an operation according to `operator`
     if (operator === operators.Add) {
-        number1 = add(number1, number2);
+        number1 = number1 + number2;
 
     } else if (operator === operators.Subtract) {
-        number1 = subtract(number1, number2);
+        number1 = number1 - number2;
 
     } else if (operator === operators.Multiply) {
-        number1 = multiply(number1, number2);
+        number1 = number1 * number2;
 
     } else if (operator === operators.Divide) {
-        number1 = divide(number1, number2);
+        number1 = number1 / number2;
 
     } else {
-        number1 = modulo(number1, number2);
+        number1 = number1 % number2;
     }
     // STEP 5: Adjust text content in 'result' tag
-    resultTag.textContent = Number(number1);
+    resultTag.textContent = number1;
 
     // STEP 6: Clear variables except 'number1'
     number2 = "";
