@@ -115,6 +115,15 @@ function assignOperator(e) {
 
     // CASE 1B: 'Subtract' button was pressed
     } else if (e.target.id === "subtract") {
+
+        // CASE 1BI: Attempting to create a negative number
+        if (number1 === "") {
+            number1 = "-".concat(number2);
+            number2 = "";
+            resultTag.textContent = number1;
+            return;
+        }
+        // CASE 1BII: 
         operator = operators.Subtract;
 
     // CASE 1C: 'Multiply' button was pressed
