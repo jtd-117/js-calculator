@@ -72,12 +72,15 @@ function modulo(number1, number2) {
  */
 function operate() {
 
+    // STEP 0: Check if calculator is active
+    if (powerBtn.classList.contains("off")) {
+        return;
+    }
     // STEP 1: Ensure arguments do not lead to sytnax error
     if ((number1 === "") || (number2 === "") || (operator === null)) {
         resultTag.textContent = "Syntax Error";
         return;
     }
-
     // STEP 2: Convert variables to numbers
     number1 = Number(number1);
     number2 = Number(number2);
@@ -116,6 +119,10 @@ function operate() {
  */
 function assignOperator(e) {
 
+    // STEP 0: Check if calculator is active
+    if (powerBtn.classList.contains("off")) {
+        return;
+    }
     // CASE 1A: 'Add' button was pressed
     if (e.target.id === "add") {
         operator = operators.Add;
@@ -160,12 +167,16 @@ function assignOperator(e) {
  */
 function composeNumber(e) {
 
-    // CASE A: Composing the FIRST number
+    // STEP 0: Check if calculator is active
+    if (powerBtn.classList.contains("off")) {
+        return;
+    }
+    // CASE 1A: Composing the FIRST number
     if (operator === null) {
         number1 = number1.concat(e.target.value);
         resultTag.textContent = Number(number1);
     
-    // CASE B: Composing the SECOND number
+    // CASE 1B: Composing the SECOND number
     } else {
         number2 = number2.concat(e.target.value);
         resultTag.textContent = Number(number2);
@@ -176,6 +187,12 @@ function composeNumber(e) {
  * @description Resets variables to their default state.
  */
 function resetVariables() {
+
+    // STEP 0: Check if calculator is active
+    if (powerBtn.classList.contains("off")) {
+        return;
+    }
+    // STEP 1: Reset relevant variables
     number1 = "";
     number2 = "";
     operator = null;
@@ -188,15 +205,39 @@ function resetVariables() {
  */
 function deleteCharacter() {
 
-    // CASE A: Deleting from the FIRST number
+    // STEP 0: Check if calculator is active
+    if (powerBtn.classList.contains("off")) {
+        return;
+    }
+    // CASE 1A: Deleting from the FIRST number
     if (operator === null) {
         number1 = number1.slice(0, -1);
         resultTag.textContent = Number(number1);
     
-    // CASE B: Deleting from the SECOND number
+    // CASE 2B: Deleting from the SECOND number
     } else {
         number2 = number2.slice(0, -1);
         resultTag.textContent = Number(number2);
+    }
+}
+/* -------------------------------------------------------------------------- */
+/**
+ * @description 
+ */
+function togglePower() {
+
+    // STEP 1: Toggle the 'activated' class
+    powerBtn.classList.toggle("off");
+
+    // CASE 2A: Activated
+    if (powerBtn.classList.contains("off") === false) {
+        screenTag.style.backgroundColor = "white";
+        resetVariables();
+    
+    // CASE 2B: Not activated
+    } else {
+        screenTag.style.backgroundColor = "black";
+        resultTag.textContent = "";
     }
 }
 /* -------------------------------------------------------------------------- */
@@ -207,10 +248,9 @@ function deleteCharacter() {
 let number1 = "";
 let number2 = "";
 let operator = null;
-window.onload = () => {
-    resultTag.textContent = "0";
-}
+
 // STEP 2: Query Selectors
+const screenTag = document.getElementById("screen");
 const powerBtn = document.getElementById("power");
 const deleteBtn = document.getElementById("delete");
 const allClearBtn = document.getElementById("all-clear");
@@ -237,3 +277,4 @@ decimalBtn.addEventListener("click", composeNumber);
 // STEP 4: Event listeners for 'delete', 'all-clear' & 'power' buttons
 allClearBtn.addEventListener("click", resetVariables);
 deleteBtn.addEventListener("click", deleteCharacter);
+powerBtn.addEventListener("click", togglePower);
