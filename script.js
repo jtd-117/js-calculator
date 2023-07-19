@@ -95,7 +95,7 @@ function operate() {
         number1 = modulo(number1, number2);
     }
     // STEP 5: Adjust text content in 'result' tag
-    resultTag.textContent = number1;
+    resultTag.textContent = Number(number1);
 
     // STEP 6: Clear variables except 'number1'
     number2 = "";
@@ -129,7 +129,7 @@ function assignOperator(e) {
     } else {
         operator = operators.Modulo;
     }
-    expressionTag.textContent = `${number1} ${operator}`;
+    expressionTag.textContent = `${Number(number1)} ${operator}`;
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -141,12 +141,12 @@ function composeNumber(e) {
     // CASE A: Composing the FIRST number
     if (operator === null) {
         number1 = number1.concat(e.target.value);
-        resultTag.textContent = number1;
+        resultTag.textContent = Number(number1);
     
     // CASE B: Composing the SECOND number
     } else {
         number2 = number2.concat(e.target.value);
-        resultTag.textContent = number2;
+        resultTag.textContent = Number(number2);
     }
 }
 /* -------------------------------------------------------------------------- */
@@ -158,7 +158,7 @@ function resetVariables() {
     number2 = "";
     operator = null;
     expressionTag.textContent = "";
-    resultTag.textContent = "";
+    resultTag.textContent = Number(number1);
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -169,12 +169,12 @@ function deleteCharacter() {
     // CASE A: Deleting from the FIRST number
     if (operator === null) {
         number1 = number1.slice(0, -1);
-        resultTag.textContent = number1;
+        resultTag.textContent = Number(number1);
     
     // CASE B: Deleting from the SECOND number
     } else {
         number2 = number2.slice(0, -1);
-        resultTag.textContent = number2;
+        resultTag.textContent = Number(number2);
     }
 }
 /* -------------------------------------------------------------------------- */
@@ -185,7 +185,9 @@ function deleteCharacter() {
 let number1 = "";
 let number2 = "";
 let operator = null;
-
+window.onload = () => {
+    resultTag.textContent = Number(number1);
+}
 // STEP 2: Query Selectors
 const powerBtn = document.getElementById("power");
 const deleteBtn = document.getElementById("delete");
