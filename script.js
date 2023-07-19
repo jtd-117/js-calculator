@@ -131,12 +131,12 @@ function assignOperator(e) {
             return;
 
         // CASE 1BII: Attempting to create a negative number for 'number2'
-        } else if (number2 === "") {
+        } else if (number2 === "" && operator !== null) {
             number2 = "-".concat(number2);
             resultTag.textContent = number2;
             return;
         }
-        // CASE 1BIII: 
+        // CASE 1BIII: Trying to subtract
         operator = operators.Subtract;
 
     // CASE 1C: 'Multiply' button was pressed
