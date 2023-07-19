@@ -123,14 +123,20 @@ function assignOperator(e) {
     // CASE 1B: 'Subtract' button was pressed
     } else if (e.target.id === "subtract") {
 
-        // CASE 1BI: Attempting to create a negative number
+        // CASE 1BI: Attempting to create a negative number for 'number1'
         if (number1 === "") {
             number1 = "-".concat(number2);
             number2 = "";
             resultTag.textContent = number1;
             return;
+
+        // CASE 1BII: Attempting to create a negative number for 'number2'
+        } else if (number2 === "") {
+            number2 = "-".concat(number2);
+            resultTag.textContent = number2;
+            return;
         }
-        // CASE 1BII: 
+        // CASE 1BIII: 
         operator = operators.Subtract;
 
     // CASE 1C: 'Multiply' button was pressed
